@@ -59,8 +59,6 @@ class UserViewController: UIViewController {
          * addSubView会触发layoutSubviews
          * layoutSubViews默认不做任何操作，但若重写应注意
          */
-//        view.background(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
-        mainTableView.frame = CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-44)
         mainTableView.into(self.view).top(44).bottom(0).left(0).right(0)
     }
 
