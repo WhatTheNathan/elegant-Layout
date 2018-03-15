@@ -12,11 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         let userVC = UserViewController()
         self.window?.rootViewController = userVC
+        self.window?.makeKeyAndVisible()
+        self.window?.background(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         return true
     }
 

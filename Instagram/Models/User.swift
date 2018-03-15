@@ -11,15 +11,15 @@ import Foundation
 class User {
     var username : String
     var avatar_url : URL
-    var followings : String
-    var followers : String
+    var followings : Int
+    var followers : Int
     var description : String
     var posts : Int
     
     init(username: String,
          avatar_url: URL,
-         followings: String,
-         followers: String,
+         followings: Int,
+         followers: Int,
          description: String,
          posts: Int) {
         self.username = username
