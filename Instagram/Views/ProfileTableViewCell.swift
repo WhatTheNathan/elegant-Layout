@@ -41,20 +41,36 @@ class ProfileTableViewCell: UITableViewCell {
         
         avatar.into(self.contentView).left(15).top(20).height(100).width(100)
         
-        postsButton.into(self.contentView).after(avatar,50).top(20).height(50).width(50)
+        postsButton.into(self.contentView).after(avatar,50).top(20).height(50).width(50).color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         
-        followersButton.into(self.contentView).after(postsButton,30).top(20).height(50).width(50)
+        followersButton.into(self.contentView).after(postsButton,30).top(20).height(50).width(50).color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         
-        followingButton.into(self.contentView).after(followersButton,30).top(20).height(50).width(50)
+        followingButton.into(self.contentView).after(followersButton,30).top(20).height(50).width(50).color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         
-        editButton.into(self.contentView).after(avatar,40).below(followersButton,10).height(30).width(200)
+        editButton.into(self.contentView).after(avatar,40).below(followersButton,10).height(30).width(200).color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).title("Edit Profile")
         
-        settingButton.into(self.contentView).after(avatar,10).below(followingButton,10).height(30).width(40)
+        settingButton.into(self.contentView).after(avatar,10).below(followingButton,10).height(30).width(40).color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         
-        descriptionButton.into(self.contentView).left(15).right(15).below(avatar,10).bottom(5).height(30)
+        descriptionButton.into(self.contentView).left(15).right(15).below(avatar,10).bottom(5).height(30).color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
     }
     
     private func updateUI() {
+//        avatar.image = UIImage.init(named: (user?.avatar_url)!)
+//        avatar.layer.masksToBounds = true
+//        avatar.layer.cornerRadius = 50.0
+        DispatchQueue.global(qos: .default).async {
+            let newImage = UIImage.init(named: (self.user?.avatar_url)!)?.drawCircleImage()
+            DispatchQueue.main.async {
+                self.avatar.image = newImage
+            }
+        }
+        
+        postsButton.setTitle(String(describing: user?.posts) + "/nPosts", for: .normal)
+        
+        followersButton.setTitle(String(describing: user?.followers) + "/nFollowers", for: .normal)
+        followingButton.setTitle(String(describing: user?.followings) + "/nFollowings", for: .normal)
+        
+        descriptionButton.setTitle(user?.description, for: .normal)
         
     }
 }

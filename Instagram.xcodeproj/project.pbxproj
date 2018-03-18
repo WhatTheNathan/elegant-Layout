@@ -13,6 +13,7 @@
 		53448BFE205106B8004EFC9C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53448BFD205106B8004EFC9C /* UserViewController.swift */; };
 		53448C0220510740004EFC9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53448C0120510740004EFC9C /* User.swift */; };
 		53448C042051074C004EFC9C /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53448C032051074C004EFC9C /* Movement.swift */; };
+		53486A23205E0B7B00949638 /* ExtImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53486A22205E0B7B00949638 /* ExtImage.swift */; };
 		53BDBECF205A1D1200AB09CA /* UserViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BDBECE205A1D1200AB09CA /* UserViewControllerDelegate.swift */; };
 		53BDBED2205A221600AB09CA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BDBED1205A221600AB09CA /* ProfileTableViewCell.swift */; };
 		53BDBED4205A43FB00AB09CA /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BDBED3205A43FB00AB09CA /* SnapKit.swift */; };
@@ -29,6 +30,7 @@
 		53448BFD205106B8004EFC9C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		53448C0120510740004EFC9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		53448C032051074C004EFC9C /* Movement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
+		53486A22205E0B7B00949638 /* ExtImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtImage.swift; sourceTree = "<group>"; };
 		53BDBECE205A1D1200AB09CA /* UserViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerDelegate.swift; sourceTree = "<group>"; };
 		53BDBED1205A221600AB09CA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		53BDBED3205A43FB00AB09CA /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				53BDBED3205A43FB00AB09CA /* SnapKit.swift */,
+				53486A22205E0B7B00949638 /* ExtImage.swift */,
 				53448BF120510043004EFC9C /* Assets.xcassets */,
 				53448BF320510043004EFC9C /* LaunchScreen.storyboard */,
 				53448BF620510043004EFC9C /* Info.plist */,
@@ -254,6 +257,7 @@
 			files = (
 				53BDBECF205A1D1200AB09CA /* UserViewControllerDelegate.swift in Sources */,
 				53448C042051074C004EFC9C /* Movement.swift in Sources */,
+				53486A23205E0B7B00949638 /* ExtImage.swift in Sources */,
 				53448BEB20510043004EFC9C /* AppDelegate.swift in Sources */,
 				53BDBED2205A221600AB09CA /* ProfileTableViewCell.swift in Sources */,
 				53448BFE205106B8004EFC9C /* UserViewController.swift in Sources */,

@@ -10,14 +10,14 @@ import Foundation
 
 class User {
     var username : String
-    var avatar_url : URL
+    var avatar_url : String
     var followings : Int
     var followers : Int
     var description : String
     var posts : Int
     
     init(username: String,
-         avatar_url: URL,
+         avatar_url: String,
          followings: Int,
          followers: Int,
          description: String,

@@ -548,3 +548,23 @@ extension UITextField {
         return self
     }
 }
+
+extension UIButton {
+    @discardableResult func title(_ title: String, _ state: UIControlState = .normal) -> Self {
+        autoCheckInto()
+        self.setTitle(title,for: state)
+        return self
+    }
+    
+    @discardableResult func color(_ color: UIColor, _ state: UIControlState = .normal) -> Self{
+        autoCheckInto()
+        self.setTitleColor(color, for: state)
+        return self
+    }
+    
+    @discardableResult func attribute(_ string: NSAttributedString, _ state: UIControlState = .normal) -> Self {
+        autoCheckInto()
+        self.setAttributedTitle(string,for: state)
+        return self
+    }
+}

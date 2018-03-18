@@ -30,6 +30,8 @@ class UserViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
         mainTableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "Profile")
+        mainTableView.separatorStyle = .none
+        mainTableView.allowsSelection = false
         
         /// 载入数据
         prepareData()
@@ -45,20 +47,21 @@ class UserViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    // addSubview，scroll,改变frame等时候调用，用到才重写，基本用于横竖屏切换时
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     private func prepareData() {
-        self.user = User(username: "whatthenathan", avatar_url: URL(string:"https://avatars3.githubusercontent.com/u/22427632?s=400&u=adab7d249349f905344e7292f279e2966bff0738&v=4")!, followings: 54, followers: 10, description: "Yolo", posts: 7)
+        self.user = User(username: "whatthenathan", avatar_url: "avatar", followings: 54, followers: 10, description: "Yolo", posts: 7)
     }
     
     private func layoutUI() {
-        /*
-         * addSubView会触发layoutSubviews
-         * layoutSubViews默认不做任何操作，但若重写应注意
-         */
         mainTableView.into(self.view).top(44).bottom(0).left(0).right(0)
     }
 
