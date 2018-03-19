@@ -562,9 +562,15 @@ extension UIButton {
         return self
     }
     
-    @discardableResult func attribute(_ string: NSAttributedString, _ state: UIControlState = .normal) -> Self {
+    @discardableResult func numberOfLines(_ lines: Int = 0) -> Self{
         autoCheckInto()
-        self.setAttributedTitle(string,for: state)
+        self.titleLabel?.numberOfLines = lines
+        return self
+    }
+    
+    @discardableResult func align(_ align: NSTextAlignment) -> Self {
+        autoCheckInto()
+        self.titleLabel?.textAlignment = align
         return self
     }
 }
