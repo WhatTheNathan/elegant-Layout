@@ -65,7 +65,7 @@ class UserViewController: UIViewController {
     }
     
     private func layoutUI() {
-        mainTableView.into(self.view).top(44).bottom(0).left(0).right(0)
+        mainTableView.into(self.view).top(0).bottom(0).left(0).right(0)
     }
 
 }

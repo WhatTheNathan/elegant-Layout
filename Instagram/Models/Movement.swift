@@ -11,14 +11,14 @@ import Foundation
 class Movement {
     var content : String
     var imageNumber : Int
-    var imageUrls : [URL]
-    var owner_avatar : URL
+    var imageUrls : [String]
+    var owner_avatar : String
     var owner_userName : String
     
     init(content : String,
          imageNumber : Int,
-         imageUrls : [URL] = [],
-         owner_avatar : URL,
+         imageUrls : [String] = [],
+         owner_avatar : String,
          owner_userName : String) {
         self.content = content
         self.imageNumber = imageNumber
