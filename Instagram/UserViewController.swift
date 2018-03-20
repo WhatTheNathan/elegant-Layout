@@ -13,8 +13,11 @@ class UserViewController: UIViewController {
 
     /**
      * 主体为TableView
-     * 显示三个Cell : user基本profile,控件栏，动态橱窗栏
+     * 显示两个Cell : user基本profile+控件栏，动态橱窗栏
      * 动态橱窗栏根据控件的事件动态展示四个不同的Cell
+     * 动态实现:
+     * 1. KVO,维持一个被监听的属性
+     * 2. delegate 四个cell成为ProfileCell的delegate
      **/
     
     // Mark : - UI
@@ -58,7 +61,7 @@ class UserViewController: UIViewController {
     }
     
     private func prepareData() {
-        self.user = User(username: "whatthenathan", avatar_url: "avatar", followings: 54, followers: 10, description: "Yolo", posts: 7)
+        self.user = User(username: "whatthenathan", avatar_url: "avatar", followings: 54, followers: 10, description: "You only live once", posts: 7)
     }
     
     private func layoutUI() {

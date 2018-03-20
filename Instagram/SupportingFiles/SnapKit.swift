@@ -573,4 +573,11 @@ extension UIButton {
         self.titleLabel?.textAlignment = align
         return self
     }
+    
+    @discardableResult func contentAlign(_ align: UIControlContentHorizontalAlignment ) -> Self {
+        autoCheckInto()
+        self.contentHorizontalAlignment = align
+        return self
+    }
+
 }
