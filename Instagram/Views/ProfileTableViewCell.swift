@@ -31,6 +31,9 @@ class ProfileTableViewCell: UITableViewCell {
     var underLine_1 = UIView()
     var underLine_2 = UIView()
     
+    /* delegate */
+    var delegate : SwitchCellProtocol?
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         customInit()
@@ -68,6 +71,11 @@ class ProfileTableViewCell: UITableViewCell {
         fourthButton.into(self.contentView).below(underLine_1,3).right(0).width(UIScreen.main.bounds.width / 4).height(30)
         verticalButton.into(self.contentView).below(underLine_1,3).after(exhibitionButton,0).width(UIScreen.main.bounds.width / 4).height(30)
         thirdButton.into(self.contentView).below(underLine_1,3).after(verticalButton,0).width(UIScreen.main.bounds.width / 4).height(30)
+        
+        verticalButton.addTarget(self, action: #selector(switchCell(_:)), for: .touchDown)
+        verticalButton.tag = 1
+        exhibitionButton.addTarget(self, action: #selector(switchCell(_:)), for: .touchDown)
+        exhibitionButton.tag = 2
 
         underLine_2.into(self.contentView).below(exhibitionButton,3).width(UIScreen.main.bounds.width).height(1).background(#colorLiteral(red: 0.9103347081, green: 0.9103347081, blue: 0.9103347081, alpha: 1)).bottom(3)
     }
@@ -127,5 +135,19 @@ class ProfileTableViewCell: UITableViewCell {
         
         textAttrString.font(numSize, numFont, numberRange).color(numColor,numberRange).font(descSize, descFont, descRange).color(descColor,descRange)
         button.setAttributedTitle(textAttrString, for: .normal)
+    }
+    
+    @objc func switchCell(_ sender: UIButton) {
+        var item: userItem
+        switch sender.tag {
+        case 1:
+            item = userItem.vertical([])
+            delegate?.switchCell(item: item)
+        case 2:
+            item = userItem.exhibition([])
+            delegate?.switchCell(item: item)
+        default:
+            break
+        }
     }
 }

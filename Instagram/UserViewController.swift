@@ -9,6 +9,12 @@
 import UIKit
 import SnapKit
 
+enum userItem {
+    case user(User)
+    case vertical([Movement])
+    case exhibition([Movement])
+}
+
 class UserViewController: UIViewController {
 
     /**
@@ -17,23 +23,33 @@ class UserViewController: UIViewController {
      * 动态橱窗栏根据控件的事件动态展示四个不同的Cell
      * 动态实现:
      * 1. KVO,维持一个被监听的属性
-     * 2. delegate 四个cell成为ProfileCell的delegate
+     * 2. delegate UserVC成为profileCell的delegate
      **/
     
     // Mark : - UI
     private var mainTableView = UITableView()
     
     // Mark : - Model
-    enum userItem {
-        case user(User)
-        case vertical([Movement])
-        case exhibition([Movement])
-    }
-    
     fileprivate var user : User?
     fileprivate var movements : [Movement] = []
     fileprivate var model : [userItem] = []
     
+    var state = userItem.vertical([]) {
+        didSet {
+            model.removeAll()
+            model.append(userItem.user(self.user!))
+            switch state {
+            case .exhibition(_):
+                self.model.append(userItem.exhibition(self.movements))
+            case .vertical(_):
+                self.model.append(userItem.vertical(self.movements))
+            default:
+                break
+            }
+            self.mainTableView.reloadData()
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -108,8 +124,8 @@ class UserViewController: UIViewController {
         self.movements.append(movement_17)
         
         self.model.append(userItem.user(self.user!))
-//        self.model.append(userItem.vertical(self.movements))
-        self.model.append(userItem.exhibition(self.movements))
+        self.model.append(userItem.vertical(self.movements))
+//        self.model.append(userItem.exhibition(self.movements))
     }
     
     private func layoutUI() {
@@ -145,6 +161,7 @@ extension UserViewController : UITableViewDataSource {
         case .user(let user):
             let cell = tableView.dequeueReusableCell(withIdentifier: "Profile", for: indexPath) as! ProfileTableViewCell
             cell.user = user
+            cell.delegate = self
             return cell
         case .vertical(let movements):
             let cell = tableView.dequeueReusableCell(withIdentifier: "Vertical", for: indexPath) as! VerticalTableViewCell
@@ -158,5 +175,8 @@ extension UserViewController : UITableViewDataSource {
     }
 }
 
-
-
+extension UserViewController: SwitchCellProtocol {
+    func switchCell(item: userItem) {
+        self.state = item
+    }
+}
