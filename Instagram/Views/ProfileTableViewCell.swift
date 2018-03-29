@@ -60,16 +60,16 @@ class ProfileTableViewCell: UITableViewCell {
         
         editButton.into(self.contentView).after(avatar,15).before(settingButton,5).below(followersButton,5).height(25).align(.center).border(1, #colorLiteral(red: 0.8566188135, green: 0.8566188135, blue: 0.8566188135, alpha: 1))
         
-        descriptionButton.into(self.contentView).left(15).right(15).below(avatar,10).bottom(5).height(20).align(.right).contentAlign(.left)
+        descriptionButton.into(self.contentView).left(15).right(15).below(avatar,10).height(20).align(.right).contentAlign(.left)
         
         underLine_1.into(self.contentView).below(descriptionButton,10).width(UIScreen.main.bounds.width).height(1).background(#colorLiteral(red: 0.9103347081, green: 0.9103347081, blue: 0.9103347081, alpha: 1))
-        
+
         exhibitionButton.into(self.contentView).below(underLine_1,3).left(0).width(UIScreen.main.bounds.width / 4).height(30)
         fourthButton.into(self.contentView).below(underLine_1,3).right(0).width(UIScreen.main.bounds.width / 4).height(30)
         verticalButton.into(self.contentView).below(underLine_1,3).after(exhibitionButton,0).width(UIScreen.main.bounds.width / 4).height(30)
         thirdButton.into(self.contentView).below(underLine_1,3).after(verticalButton,0).width(UIScreen.main.bounds.width / 4).height(30)
-        
-        underLine_2.into(self.contentView).below(exhibitionButton,3).width(UIScreen.main.bounds.width).height(1).background(#colorLiteral(red: 0.9103347081, green: 0.9103347081, blue: 0.9103347081, alpha: 1))
+
+        underLine_2.into(self.contentView).below(exhibitionButton,3).width(UIScreen.main.bounds.width).height(1).background(#colorLiteral(red: 0.9103347081, green: 0.9103347081, blue: 0.9103347081, alpha: 1)).bottom(3)
     }
     
     private func updateUI() {

@@ -11,7 +11,7 @@ import UIKit
 class VerticalTableViewCell: UITableViewCell {
     
     // Mark: - Model
-    var movements: [Movement] = []
+    var movements: [Movement] = [] { didSet { updateUI() } }
     
     var tableView = UITableView()
 
@@ -29,14 +29,21 @@ class VerticalTableViewCell: UITableViewCell {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MovementTableViewCell.self, forCellReuseIdentifier: "Movement")
+        tableView.separatorStyle = .singleLine
+        tableView.allowsSelection = false
+        tableView.dragInteractionEnabled = false
+        tableView.isScrollEnabled = false
         
         setupSubviews()
     }
     
     private func setupSubviews() {
-        tableView.top(0).left(0).right(0).bottom(0)
+        tableView.into(self.contentView).top(0).left(0).right(0).bottom(0)
     }
-
+    
+    private func updateUI() {
+        tableView.reloadData()
+    }
 }
 
 extension VerticalTableViewCell: UITableViewDelegate {

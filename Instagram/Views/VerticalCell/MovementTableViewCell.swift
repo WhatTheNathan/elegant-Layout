@@ -34,9 +34,9 @@ class MovementTableViewCell: UITableViewCell {
     private func setupSubviews() {
         avatar.into(contentView).left(5).top(5).width(70).height(70)
         
-        username.into(contentView).after(avatar,10).top(10).height(30).width(100)
+        username.into(contentView).after(avatar,10).top(10).height(30).width(200)
         
-        insImage.into(contentView).below(avatar,10).left(0).right(0).height(280)
+        insImage.into(contentView).below(avatar,5).left(0).right(0).height(375)
         
         content.into(contentView).below(insImage,10).bottom(5).left(5).right(5).height(25)
     }
@@ -44,12 +44,12 @@ class MovementTableViewCell: UITableViewCell {
     private func updateUI() {
         DispatchQueue.global().async {
             let avatarImage = UIImage.init(named: (self.movement?.owner_avatar)!)?.drawCircleImage()
-            let newInsImage = UIImage.init(named: (self.movement?.imageUrls[0])!)?.drawCircleImage()
             DispatchQueue.main.async {
                 self.avatar.image = avatarImage
-                self.insImage.image = newInsImage
             }
         }
+        
+        insImage.image = UIImage.init(named: (self.movement?.imageUrls[0])!)
         
         username.text((movement?.owner_userName)!)
         

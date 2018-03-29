@@ -17,7 +17,7 @@
 		535024A32060E66B00A5E34E /* MovementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535024A22060E66B00A5E34E /* MovementTableViewCell.swift */; };
 		536CE9002060B0EB004B6225 /* ExhibitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CE8FF2060B0EB004B6225 /* ExhibitionTableViewCell.swift */; };
 		536CE9022060B11A004B6225 /* VerticalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CE9012060B11A004B6225 /* VerticalTableViewCell.swift */; };
-		53BDBECF205A1D1200AB09CA /* UserViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BDBECE205A1D1200AB09CA /* UserViewControllerDelegate.swift */; };
+		53B9B3B6206C914F00E3384F /* MovementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B9B3B5206C914F00E3384F /* MovementCollectionViewCell.swift */; };
 		53BDBED2205A221600AB09CA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BDBED1205A221600AB09CA /* ProfileTableViewCell.swift */; };
 		53BDBED4205A43FB00AB09CA /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BDBED3205A43FB00AB09CA /* SnapKit.swift */; };
 		53F644B8205F4D1E000BAF0E /* AtrributedStringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F644B7205F4D1E000BAF0E /* AtrributedStringHelper.swift */; };
@@ -39,7 +39,7 @@
 		535024A22060E66B00A5E34E /* MovementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementTableViewCell.swift; sourceTree = "<group>"; };
 		536CE8FF2060B0EB004B6225 /* ExhibitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitionTableViewCell.swift; sourceTree = "<group>"; };
 		536CE9012060B11A004B6225 /* VerticalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTableViewCell.swift; sourceTree = "<group>"; };
-		53BDBECE205A1D1200AB09CA /* UserViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerDelegate.swift; sourceTree = "<group>"; };
+		53B9B3B5206C914F00E3384F /* MovementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCollectionViewCell.swift; sourceTree = "<group>"; };
 		53BDBED1205A221600AB09CA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		53BDBED3205A43FB00AB09CA /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
 		53F644B7205F4D1E000BAF0E /* AtrributedStringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtrributedStringHelper.swift; sourceTree = "<group>"; };
@@ -85,7 +85,6 @@
 				53BDBED0205A21E500AB09CA /* Views */,
 				53448BEA20510043004EFC9C /* AppDelegate.swift */,
 				53448BFD205106B8004EFC9C /* UserViewController.swift */,
-				53BDBECE205A1D1200AB09CA /* UserViewControllerDelegate.swift */,
 				53448BFC20510444004EFC9C /* SupportingFiles */,
 			);
 			path = Instagram;
@@ -127,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				536CE8FF2060B0EB004B6225 /* ExhibitionTableViewCell.swift */,
+				53B9B3B5206C914F00E3384F /* MovementCollectionViewCell.swift */,
 			);
 			path = ExhibitionCell;
 			sourceTree = "<group>";
@@ -286,7 +286,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53BDBECF205A1D1200AB09CA /* UserViewControllerDelegate.swift in Sources */,
 				53F644B8205F4D1E000BAF0E /* AtrributedStringHelper.swift in Sources */,
 				53F644BA205F5A64000BAF0E /* ExtString.swift in Sources */,
 				53448C042051074C004EFC9C /* Movement.swift in Sources */,
@@ -296,6 +295,7 @@
 				53BDBED2205A221600AB09CA /* ProfileTableViewCell.swift in Sources */,
 				536CE9002060B0EB004B6225 /* ExhibitionTableViewCell.swift in Sources */,
 				53448BFE205106B8004EFC9C /* UserViewController.swift in Sources */,
+				53B9B3B6206C914F00E3384F /* MovementCollectionViewCell.swift in Sources */,
 				53448C0220510740004EFC9C /* User.swift in Sources */,
 				53BDBED4205A43FB00AB09CA /* SnapKit.swift in Sources */,
 				536CE9022060B11A004B6225 /* VerticalTableViewCell.swift in Sources */,
